@@ -57,32 +57,41 @@
 
 }
 
-.card{
+.card {
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    list-style: none;
-    gap: 2px;
-    margin: 2px;
+    gap: 10px;
+    margin: 10px;
+    width: 200px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    overflow: hidden; /* Prevent content overflow */
 }
 
-.card ul{
+.card ul {
     list-style: none;
     align-items: center;
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
-.card li{
-    list-style: none;
+.card li {
     font-size: medium;
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Add ellipsis (...) for long text */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    max-width: 100%; /* Ensure text stays within the card */
 }
 
-.card li #Product_Image{
+#Product_Image {
     width: 150px;
     height: 150px;
+    object-fit: contain; /* Ensure the image fits within the specified size */
 }
 
 .top {

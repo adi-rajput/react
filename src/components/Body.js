@@ -1,22 +1,37 @@
-import { ProductCard } from './Product-card';
-import { products } from '../utils/product_list';
-import { useState } from 'react';
+import { ProductCard } from "./Product-card";
+import { useState, useEffect } from "react";
 
-export const Body = () => {    
-    const [topProducts, setTopProducts] = useState(products);
+export const Body = () => {
+  const [products, setTopProducts] = useState([]);
 
-    function handleTopProducts() {  
-        setTopProducts(products.filter((key) => key.rating >= 4.4));
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("https://fakestoreapi.com/products");
+      const data = await response.json();
+      setTopProducts(data);
+    } catch (error) {
+      console.error("Failed to fetch products", error);
     }
+  };
 
-    return (
-        <>
-            <button className='top' onClick={handleTopProducts}>Top Products</button>
-            <div className='Body'>
-                {topProducts.map((key) => (
-                    <ProductCard  products={key} />  
-                ))}           
-            </div> 
-        </>
-    );
-}
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  function handleTopProducts() {
+    setTopProducts(products.filter((product) => product.rating.rate >= 4.5));
+  }
+
+  return (
+    <>
+      <button className="top" onClick={handleTopProducts}>
+        Top Products
+      </button>
+      <div className="Body">
+        {products.map((product) => (
+          <ProductCard key={product.id} products={product} />
+        ))}
+      </div>
+    </>
+  );
+};

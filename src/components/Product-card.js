@@ -6,7 +6,7 @@ export const ProductCard = ({products}) => {
                 <li><img src={products.image} id="Product_Image" /></li>
                 <li>{products.title}</li>
                 <li>Price: ${products.price}</li>
-                <li>Rating: {products.rating}</li>
+                <li>Rating: {products.rating.rate}</li>
             </ul>
         </div>
     );
