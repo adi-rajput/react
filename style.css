@@ -250,3 +250,102 @@
 .Navbar a:visited{
     color: white;
 }       
+
+/* Container for the entire card */
+.single-card {
+    width: 80%; /* Larger width for the detailed view */
+    max-width: 1000px; /* Limit max width for larger screens */
+    border-radius: 12px; /* Rounded corners */
+    background-color: #fff; /* White background color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Larger shadow for more depth */
+    overflow: hidden; /* Ensure child elements don't overflow */
+    margin: 40px auto; /* Center the card horizontally with more margin */
+    padding: 24px; /* Extra padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effect */
+  }
+  
+  /* Hover effect */
+  .single-card:hover {
+    transform: translateY(-10px); /* Move card up on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  }
+  
+  /* Card image styling */
+  .single-card img {
+    width: 100%; /* Full width of the container */
+    max-height: 500px; /* Limit the height */
+    object-fit: contain; /* Ensure image is scaled proportionally without being cut off */
+    margin-bottom: 20px; /* Space between image and content */
+    border-bottom: 2px solid #eee; /* Light border between image and content */
+  }
+  
+  /* List inside the card */
+  .single-card ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 20px; /* Add padding around the content */
+  }
+  
+  /* List item styling */
+  .single-card li {
+    margin: 12px 0; /* Spacing between list items */
+    font-size: 18px; /* Slightly larger font size for details */
+    color: #333; /* Text color */
+    font-family: 'Arial', sans-serif; /* Font choice */
+    line-height: 1.6; /* Improve readability */
+  }
+  
+  /* Product title */
+  .single-card li:nth-child(2) {
+    font-weight: bold; /* Bold title */
+    font-size: 24px; /* Increase font size for title */
+    color: #222; /* Darker color for title */
+    margin-bottom: 16px; /* Add spacing below title */
+  }
+  
+  /* Price styling */
+  .single-card li:nth-child(3) {
+    color: #E63946; /* Red color for price */
+    font-weight: bold; /* Bold price text */
+    font-size: 22px; /* Larger font for price */
+  }
+  
+  /* Rating styling */
+  .single-card li:nth-child(4) {
+    color: #2a9d8f; /* Green color for rating */
+    font-size: 20px; /* Slightly larger font for rating */
+  }
+  
+  /* Description styling */
+  .single-card li:nth-child(5) {
+    font-size: 18px; /* Larger font for description */
+    color: #555; /* Gray color for description */
+    line-height: 1.8; /* Increase line height for readability */
+    margin-top: 16px; /* Add some space before description */
+    text-align: justify; /* Justify text for clean alignment */
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .single-card {
+      width: 95%; /* Wider on smaller screens */
+      padding: 16px; /* Reduce padding on smaller screens */
+    }
+  
+    .single-card img {
+      height: auto; /* Let the image scale based on aspect ratio */
+      max-height: 300px; /* Reduce max height for smaller screens */
+    }
+  
+    .single-card li {
+      font-size: 16px; /* Smaller text for mobile */
+    }
+  
+    .single-card li:nth-child(2) {
+      font-size: 20px; /* Adjust title size on mobile */
+    }
+  
+    .single-card li:nth-child(3) {
+      font-size: 18px; /* Adjust price size on mobile */
+    }
+  }
+  

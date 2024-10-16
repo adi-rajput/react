@@ -1,6 +1,7 @@
 import { ProductCard } from "./Product-card";
 import { useState, useEffect } from "react";
-import Skeleton from "./skeleton";
+import Skeleton from "./skeleton"; 
+import { Link } from "react-router-dom";
 export const Body = () => {
   const [products, setProducts] = useState([]);
   const [minRating, setminRating] = useState(0);
@@ -71,7 +72,7 @@ export const Body = () => {
 
       <div className="Body">
         {filterProduct.map((product) => (
-          <ProductCard key={product.id} products={product} />
+          <Link key={product.id} to={`/products/${product.id}`}><ProductCard  products={product} /></Link>
         ))}
       </div>
     </>
