@@ -232,3 +232,21 @@
     width: 80%;
     margin: 5px auto;
 }
+
+#nav-links a {
+    color: white; /* Permanent white for unvisited links */
+
+  }
+  
+  #nav-links a:visited {
+    color: white; /* Permanent white for visited links */
+  }
+  
+.Navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.Navbar a:visited{
+    color: white;
+}       
