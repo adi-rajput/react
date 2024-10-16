@@ -71,7 +71,11 @@
     height: 250px; /* Fixed height */
     overflow: hidden; /* Prevent content overflow */
 }
-
+.card  :hover{
+    white-space: normal; 
+    overflow: visible; 
+    max-width: none; 
+}
 .card ul {
     list-style: none;
     align-items: center;
@@ -106,6 +110,12 @@
     font-size: large;
     margin-left: 30px;
     margin-bottom: 10px;
+}
+
+.search{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: large;
 }
 
 /* Global reset */
