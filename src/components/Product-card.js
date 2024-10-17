@@ -11,3 +11,14 @@ export const ProductCard = ({products}) => {
         </div>
     );
 }
+
+export const HOF = (product) => {
+    return (props) =>{
+        return (
+            <div className="High">
+                <span className="HOF">Best-Seller</span>
+                <ProductCard {...props}/>
+            </div>
+        )
+    }
+}

@@ -1,4 +1,4 @@
-import { ProductCard } from "./Product-card";
+import { HOF, ProductCard } from "./Product-card";
 import { useState, useEffect } from "react";
 import Skeleton from "./skeleton"; 
 import { Link } from "react-router-dom";
@@ -17,6 +17,8 @@ export const Body = () => {
       console.error("Failed to fetch products", error);
     }
   };
+
+  const HOFComponent = HOF(ProductCard);
 
   useEffect(() => {
     fetchProducts();
@@ -72,7 +74,14 @@ export const Body = () => {
 
       <div className="Body">
         {filterProduct.map((product) => (
-          <Link key={product.id} to={`/products/${product.id}`}><ProductCard  products={product} /></Link>
+          <Link key={product.id} to={`/products/${product.id}`}>
+            {
+              product.rating.rate >= 4 ? (
+                <HOFComponent products={product} />
+              ) : (
+                <ProductCard products={product} />
+              )
+            }</Link>
         ))}
       </div>
     </>
