@@ -44,7 +44,7 @@ export const Body = () => {
     <>
       <div>
         {/* Input field for the user to enter a minimum rating */}
-        <label htmlFor="ratingInput" className="filter">
+        <label htmlFor="ratingInput" className="filter ">
           Enter Minimum Rating:{" "}
         </label>
         <input
@@ -55,11 +55,12 @@ export const Body = () => {
           step="0.1"
           min="0"
           max="5"
-          //placeholder="Enter rating (e.g., 3.5)"
+          className="border-2 border-gray-300 rounded-md mx-1"
+          placeholder="Enter rating (e.g., 3.5)"
         />
 
         {/* Button to trigger the filter function */}
-        <button onClick={handleTopProducts}>Filter</button>
+        <button className="bg-black mx-1 px-4  text-white rounded-md  " onClick={handleTopProducts}>Filter</button>
       </div>
 
       <div className="search">
@@ -68,8 +69,9 @@ export const Body = () => {
           type="text"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          className="border-2 border-gray-300 rounded-md mx-1"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="bg-black font-mono text-white rounded-md px-1" onClick={handleSearch}>Search</button>
       </div>
 
       <div className="Body">

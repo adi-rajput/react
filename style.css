@@ -7,7 +7,8 @@
     display: flex;
     width: auto;
     height: 40px;
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
+    border:rgb(255, 255, 255);
     width: 100%;
     justify-content: space-between;
 }
@@ -21,7 +22,7 @@
     gap: 1px;
     margin-right: auto;
     margin-left: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .Navbar #nav-components{
@@ -43,7 +44,7 @@
     font-size: medium;
     gap: 20px;
     justify-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .Body{
@@ -239,16 +240,16 @@
   }
   
   #nav-links a:visited {
-    color: white; /* Permanent white for visited links */
+    color: rgb(0, 0, 0); /* Permanent white for visited links */
   }
   
 .Navbar a{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 .Navbar a:visited{
-    color: white;
+    color: rgb(0, 0, 0);
 }       
 
 /* Container for the entire card */
@@ -364,3 +365,14 @@
   .high{
     position: relative;
   }
+
+  
+
+  /* .men{
+    margin-left: 200px;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight:200;
+    margin-top: 20px;
+    max-width: 600px;
+  } */
