@@ -11,6 +11,8 @@ import UserContext from "./src/utils/UserContext";
 import { useState } from "react";
 import {Provider}   from "react-redux";
 import  store  from "./src/store/store";
+import Form from "./src/components/form";
+
 const Grocery = lazy(() => import("./src/components/Grocery"));
 const App = () => {
   const [username, setUsername] = useState("Ram");
@@ -50,6 +52,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDetails />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/form",
+        element: <Form />,
         errorElement: <Error />,
       },
       {
