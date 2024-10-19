@@ -9,16 +9,20 @@ import Error from "./src/components/Error";
 import ProductDetails from "./src/components/ProductDetails";
 import UserContext from "./src/utils/UserContext";
 import { useState } from "react";
+import {Provider}   from "react-redux";
+import  store  from "./src/store/store";
 const Grocery = lazy(() => import("./src/components/Grocery"));
 const App = () => {
-  const [username, setUsername] = useState("Ram")
+  const [username, setUsername] = useState("Ram");
   return (
-    <UserContext.Provider value={{name:username,setUsername}} >
-      <div>
-        <Navbar />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={store}>
+      <UserContext.Provider value={{ name: username, setUsername }}>
+        <div>
+          <Navbar />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
